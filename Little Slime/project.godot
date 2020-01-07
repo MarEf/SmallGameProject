@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Little Slime"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="*res://global.gd"
+
 [input]
 
 move_left={

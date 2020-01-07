@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
+onready var global = get_node("/root/global")
 # Declare member variables here. Examples:
 const GRAVITY = 200
 
-var size = 1
-var speed = 200/size
-var jump_height = 150/size
+var sizes = [0.15, 0.3, 0.5, 0.75, 1]
+var size = 3
+var speed = 600/size
+var jump_height = 450/size
 var screen_size
 var jumping = false
 
@@ -40,12 +42,19 @@ func check_collisions(motion, delta):
 	else:
 		jumping = false
 
+func check_damage():
+	if (global.lives>-1)and(global.lives<5):
+		if global.lives>size:
+			heal()
+		if global.lives<size:
+			damage()
+	
 func _physics_process(delta):
 	velocity.x = 0
 	var motion = velocity * delta
 	get_input()
 	check_collisions(motion, delta)
-	
+	check_damage()
 	#TO BE EDITED
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
@@ -54,4 +63,18 @@ func _physics_process(delta):
 func jump():
 	if jumping == false:
 		velocity.y = -jump_height
+
+func damage():
+	velocity.bounce(-velocity)
+	if size>0:
+		size -=1
+		self.scale = Vector2(sizes[size],sizes[size])
+	else:
+		pass
 	
+func heal():
+	if size<5:
+		size +=1
+		self.scale = Vector2(sizes[size],sizes[size])
+	else:
+		pass

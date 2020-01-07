@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TempPlatform1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TempGoal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TempDamage.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TempHealPoint.tscn" type="PackedScene" id=5]
 
 [node name="Sandbox" type="Node2D"]
 
@@ -24,3 +26,10 @@ position = Vector2( 310, 260.04 )
 
 [node name="TempGoal" parent="." instance=ExtResource( 3 )]
 position = Vector2( 60, 50 )
+
+[node name="TempDamage" parent="." instance=ExtResource( 4 )]
+position = Vector2( 744.981, 441.019 )
+
+[node name="TempHealPoint" parent="." instance=ExtResource( 5 )]
+position = Vector2( 963.501, 315.636 )
+scale = Vector2( 0.4, 0.4 )
