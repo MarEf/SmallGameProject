@@ -11,7 +11,7 @@ height = 77.3951
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "default",
+"name": "New Anim",
 "speed": 5.0
 } ]
 
@@ -28,6 +28,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
+animation = "New Anim"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

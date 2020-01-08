@@ -5,9 +5,11 @@ onready var global = get_node("/root/global")
 const GRAVITY = 200
 
 var sizes = [0.15, 0.3, 0.5, 0.75, 1]
+var speeds = [300, 250, 200, 160, 120]
+var jump_heights = [250, 200, 150, 120, 100]
 var size = 3
-var speed = 600/size
-var jump_height = 450/size
+var speed = speeds[size]
+var jump_height = 150
 var screen_size
 var jumping = false
 
@@ -26,9 +28,9 @@ func get_input():
 	var jump = Input.is_action_pressed("jump")
 	
 	if move_right:
-		velocity.x = speed
+		velocity.x = speeds[size]
 	if move_left:
-		velocity.x = -speed
+		velocity.x = -speeds[size]
 	if move_down:
 		velocity.y = GRAVITY
 	if jump:
@@ -69,6 +71,8 @@ func damage():
 	if size>0:
 		size -=1
 		self.scale = Vector2(sizes[size],sizes[size])
+		speed = speeds[size]
+		jump_height = jump_heights[size]
 	else:
 		pass
 	
@@ -76,5 +80,7 @@ func heal():
 	if size<5:
 		size +=1
 		self.scale = Vector2(sizes[size],sizes[size])
+		speed = speeds[size]
+		jump_height = jump_heights[size]
 	else:
 		pass
