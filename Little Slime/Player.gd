@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 onready var global = get_node("/root/global")
 # Declare member variables here. Examples:
-const GRAVITY = 200
+const GRAVITY = 250
 
 var sizes = [0.15, 0.3, 0.5, 0.75, 1]
 var speeds = [300, 250, 200, 160, 120]

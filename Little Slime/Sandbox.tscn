@@ -10,14 +10,11 @@
 [node name="Sandbox" type="Node2D"]
 
 [node name="Area2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 200, 520 )
+position = Vector2( 205.169, 517.415 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 40, 460 )
 collision/safe_margin = 0.001
-
-[node name="Platform1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 590, 520.04 )
 
 [node name="Platform2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 830, 360 )
@@ -36,4 +33,4 @@ position = Vector2( 963.501, 315.636 )
 scale = Vector2( 0.4, 0.4 )
 
 [node name="PlatformTiles" parent="." instance=ExtResource( 6 )]
-tile_data = PoolIntArray( 196607, 0, 65538, 262143, 0, 65538, 327679, 0, 65538, 393214, 0, 65537, 393215, 0, 65537, 327680, 0, 1, 327681, 0, 1, 327682, 0, 1, 327683, 0, 1, 327684, 0, 1, 327685, 0, 1, 327686, 0, 1, 327687, 0, 2, 458750, 0, 65537, 458751, 0, 65537, 393216, 0, 131073, 393217, 0, 131073, 393218, 0, 131073, 393219, 0, 131073, 393220, 0, 131073, 393221, 0, 131073, 393222, 0, 131073, 393223, 0, 131074 )
+tile_data = PoolIntArray( 196607, 0, 65538, 262143, 0, 65538, 327679, 0, 65538, 262148, 0, 0, 262149, 0, 2, 393214, 0, 65537, 393215, 1, 1, 327680, 0, 1, 327681, 0, 1, 327682, 0, 1, 327683, 0, 1, 327684, 1, 0, 327685, 1, 1, 327686, 0, 1, 327687, 0, 2, 458750, 0, 65537, 458751, 0, 65537, 393216, 0, 131073, 393217, 0, 131073, 393218, 0, 131073, 393219, 0, 131073, 393220, 0, 131073, 393221, 0, 131073, 393222, 0, 131073, 393223, 0, 131074 )
