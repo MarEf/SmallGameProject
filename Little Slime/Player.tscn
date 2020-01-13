@@ -16,8 +16,11 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
+light_mask = 15
 position = Vector2( 506.405, 568.719 )
 scale = Vector2( 0.5, 0.5 )
+collision_layer = 15
+collision_mask = 15
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
