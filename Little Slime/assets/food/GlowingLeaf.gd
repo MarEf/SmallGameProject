@@ -1,4 +1,5 @@
 extends Area2D
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -12,7 +13,7 @@ func _ready():
 #	pass
 
 
-func _on_TempHealPoint_body_entered(body):
+func _on_GlowingLeaf_body_entered(body):
 	if global.lives<4:
 		global.lives +=1
 		self.queue_free()
