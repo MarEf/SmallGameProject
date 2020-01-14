@@ -13,7 +13,8 @@ func _ready():
 
 
 func _on_TempHealPoint_body_entered(body):
-	if global.lives<6:
+	if global.lives<4:
 		global.lives +=1
+		print("Heal activated")
 	else:
 		print("Already at max HP")

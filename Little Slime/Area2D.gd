@@ -13,6 +13,7 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
+	print("Damaging collision detected")
 	if global.lives>0:
 		global.lives -=1
 	else:

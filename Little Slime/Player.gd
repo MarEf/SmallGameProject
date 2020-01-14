@@ -7,7 +7,7 @@ const GRAVITY = 250
 var sizes = [0.15, 0.3, 0.5, 0.75, 1]
 var speeds = [300, 250, 200, 160, 120]
 var jump_heights = [250, 200, 150, 120, 100]
-var size = 3
+var size = 2
 var speed = speeds[size]
 var jump_height = 150
 var screen_size
@@ -18,6 +18,8 @@ var velocity = Vector2()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
+	self.scale = Vector2(sizes[size],sizes[size])
+	print("Slime size set to "+str(self.scale))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
@@ -57,10 +59,7 @@ func _physics_process(delta):
 	get_input()
 	check_collisions(motion, delta)
 	check_damage()
-	#TO BE EDITED
 	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
 	
 func jump():
 	if jumping == false:
@@ -73,14 +72,16 @@ func damage():
 		self.scale = Vector2(sizes[size],sizes[size])
 		speed = speeds[size]
 		jump_height = jump_heights[size]
+		print("Slime size set to "+str(self.scale))
 	else:
 		pass
 	
 func heal():
-	if size<5:
+	if size<4:
 		size +=1
 		self.scale = Vector2(sizes[size],sizes[size])
 		speed = speeds[size]
 		jump_height = jump_heights[size]
+		print("Slime size set to "+str(self.scale))
 	else:
 		pass

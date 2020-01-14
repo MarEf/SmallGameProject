@@ -1,8 +1,10 @@
 extends Area2D
+
+onready var global = get_node("/root/global")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var global = get_node("/root/global")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,7 +13,9 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_DamageArea_body_entered(body):
+
+func _on_TempDamageArea_body_entered(body):
+	print("Damaging collision detected")
 	if global.lives>0:
 		global.lives -=1
 	else:
