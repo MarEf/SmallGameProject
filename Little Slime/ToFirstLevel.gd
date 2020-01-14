@@ -3,7 +3,7 @@ extends Area2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var global = get_node("/root/global")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,7 +13,5 @@ func _ready():
 #	pass
 
 
-func _on_Star_body_entered(body):
-	global.stars += 1
-	#Play a jingle?
-	self.queue_free()
+func _on_ToFirstLevel_body_entered(body):
+	get_tree().change_scene("res://levels/Level 1.tscn")

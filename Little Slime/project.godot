@@ -70,6 +70,7 @@ move_down={
 2d_physics/layer_3="Hazards"
 2d_physics/layer_4="Enemies"
 2d_physics/layer_5="Food"
+2d_physics/layer_6="Tunnels"
 
 [rendering]
 
