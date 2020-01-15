@@ -47,6 +47,8 @@ func check_collisions(motion, delta):
 		jumping = false
 
 func check_damage():
+	#Set timer for 0.5 seconds so that the player can't accumulate too much damage too fast
+	
 	if (global.lives>-1)and(global.lives<5):
 		if global.lives>size:
 			heal()
@@ -66,7 +68,6 @@ func jump():
 		velocity.y = -jump_height
 
 func damage():
-	velocity.bounce(-velocity)
 	if size>0:
 		size -=1
 		self.scale = Vector2(sizes[size],sizes[size])
