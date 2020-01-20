@@ -23,7 +23,7 @@ func _timeout():
 
 func _on_TempDamageArea_body_entered(body):
 	print("Damaging collision detected")
-	if (global.lives>0)&&(!cooldown):
+	if (global.lives>=0)&&(!cooldown):
 		global.lives -=1
 		cooldown = true
 		cooldown_timer.start(0.5)

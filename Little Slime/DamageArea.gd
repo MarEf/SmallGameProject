@@ -20,9 +20,9 @@ func _timeout():
 	cooldown_timer.stop()
 
 func _on_DamageArea_body_entered(body):
-	if (global.lives>0)&&(!cooldown):
+	if (global.lives>=0)&&(!cooldown):
 		global.lives -=1
 		cooldown = true
 		cooldown_timer.start(0.5)
-	if(global.lives<=0):
+	if(global.lives<0):
 		print("GAME OVER")
